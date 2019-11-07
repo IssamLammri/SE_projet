@@ -1,0 +1,52 @@
+les réponses pour le TP de SE 
+		Exo 1: 				
+    								1 - Est-il toujours intéressant de paralléliser ?
+    														---->   oui bien sûr.
+    										Quand gagnons nous en performances avec un programme parallélisé comparé à un programme séquentiel ?
+                    						---->   dans le cas oû les données a parcourir sont baucoupe et sont pas trée et quand le temps de la creation des threads est inferieur a le temps d'execution en mode séquentielet dans ce cas on a plusieur threads qui partager 
+                                la recherche et qui finier le travail plut tot 
+    								2 - Comment les performances varient en fonction du nombre de threads ?
+                    						---->   Les changements de performances se produisent dans le cas oi on a plusieurs thread a exucuter en parallèle  et qui ont partagé le travail a des petits tâches donc  la performance ça augmente 
+                                				(plus de thread plus de performance )
+                      	Est-ce la même variation pour des petits vecteurs, moyens vecteurs, grands vecteurs ?
+                        				---->   No c'est pas la même variation pour des petits vecteurs, moyens vecteurs, grands vecteurs parceque quand on applique (plus de thread plus de performance ) dans les petits vecteurs alors la creation des thread 
+                                				plus le temps de la synchronisation ca prend de temps supérieur que le temps d'exucution simple de programme.
+                    3 - A l’inverse, comment les performances varient en fonction de la taille du vecteur ? 
+                    						---->   Les changements de performances se produisent en fonction décroissante  si la taille du vecture augmente la performances Diminue, avec peu de threads on va avoire moin de performance et avec beaucoup de threads on a plus 
+                                				de performance.
+                    4-  Quel est l’impact du parallélisme physique (nombre de processeurs) sur l’accélératon ?
+                    						---->   ??????,????????????
+                                
+    
+    Exo 3 : 
+    		1-- 
+        		les endroits du programme oû on doit le mettre la fonction gettimeofday afin de comparer les versions séquentielle et parallèle du programme sont : 
+            			- avant l'appel de fonction algo_principal pour eviter de calculer la création de vecteur qui est la mème duré dans les deux programme 
+                  - après l'appel de fonction algo_principal, et dans ce cas la on doit suppremer les instruction qui faire l'affichage de taleaux trée parceque sa prende le mème temps dans les deux programmes (méthodes) et qu'il inclu dans la fonction algo_principal.
+            on doit inclure la création des threads et la synchronisation finale dans la prise de mesure parceque la cration des threades et la synchronisation sont parmis les fonctionnalité de multithreads et qui sont déffirent de monoprogrammming .
+            
+        2-- 
+        		oui, l’ordonnanceur et les autres utilisateurs aient une influence sur notre programme parce que la methode gettimeofday il compte le temps générale de l'exucution a partire du démarage de notre programme jusqu'à la fin d'exucution 
+            et il compte aussi le temps qui notre programme passe dans l'etat bloqué et dans ce cas la le temps final ca compose de tout les processus qui ont fait exucution avec notre programme.
+            														--------------- la vérification avec les graphes.--------------------------
+            
+
+		Exo 4 :
+    		1 --- 
+        			
+        2 ---  
+        			les différences entre l’utilisation de gettimeofday et getrusage sont : 
+              			-  --- gettimeofday ---- le temps calculer avec gettimeofday est le temps tant que le programme n'est pas fini l'exucution meme le temps qui a passer dans l'etat bloqué
+                    -  --- getrusage ----  le temps calculer avec getrusage est seulement quande les precessus dons l'etat prêt ca veut dir il compt pas le temps de la synchronisation
+                    - --- gettimeofday ---- le temps qui sort contient le temps pour les autre processus qui ont fait aussi leur exucution avec notre programme 
+							le temps total reporté avec getrusage est-il inférieur à celui reporté avec gettimeofday dans tout les cas. 
+              
+              
+    Exo 5 : 
+    			1--   
+           				 facteurs influencent l’accélération et l’efficacité d’un programme parallèle : 
+                   			- les algorithmes utilisés   :  c'est l'algorithme n'est pas bien organisier pour un programme parallèle, il va obligier de l'entrée plusieur fois dans l'etat bloqué donc l’accélération ou l’efficacité ça diminuée et sinon l'ivers.
+                        - le nombre de threads utilisés : 
+                        - le nombre de processeurs de la machine
+                        - la vitesse des processeurs
+                        - les utilisateurs connectés sur la machine
